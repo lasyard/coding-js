@@ -1,0 +1,42 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.js"
+      - "**/*.ts"
+      - "**/*.jsx"
+      - "**/*.tsx"
+      - "**/*.json"
+      - "**/*.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+          - 16.x
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build react
+        working-directory: ./react
+        run: |
+          npm install
+          npx webpack
+
+      - name: Build ef-hello
+        working-directory: ./ef-hello
+        run: |
+          npm install
+          npm run make

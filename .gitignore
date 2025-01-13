@@ -1,0 +1,15 @@
+.*
+!.gitignore
+!.editorconfig
+
+# VSCode files
+!.vscode/
+
+# npm files
+node_modules/
+
+# webpack files
+dist/
+
+# GitHub files
+!.github
