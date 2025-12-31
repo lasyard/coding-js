@@ -4,4 +4,4 @@
 
 This project contains miscellaneous coding work of mine, in JavaScript/TypeScript language.
 
-MIT License: <http://lasy.great-site.net/mit_license>.
+MIT License: <https://lasy.fwh.is/mit_license>.
